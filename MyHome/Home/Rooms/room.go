@@ -1,6 +1,9 @@
 package Rooms
 
-import "fmt"
+import (
+	"fmt"
+	"university-go-project/Home/Rooms/Device"
+)
 
 type Room struct {
 	Name         string
@@ -8,11 +11,7 @@ type Room struct {
 	Length       float32
 	Height       float32
 	WindowsCount int
-}
-
-func (room Room) init() {
-	room.countSquare()
-	room.countVolume()
+	Device       Device.Devices
 }
 
 func (room Room) countSquare() float32 {
@@ -27,13 +26,13 @@ func (room Room) countVolume() float32 {
 	return room.Width * room.Length * room.Height
 }
 
-func (room Room) RoomInfo() string {
+func (room Room) getRoomString() string {
 	resString := ""
-	resString += "\tКомната: " + room.Name +
-		"; Ширина: " + fmt.Sprint(room.Width) +
-		"; Длинна: " + fmt.Sprint(room.Length) +
-		"; Высота: " + fmt.Sprint(room.Height) +
-		"; Количество окон: " + fmt.Sprint(room.WindowsCount) +
-		"\n"
+	resString += "\t\tКомната: " + room.Name + "\n" +
+		"\t\tШирина: " + fmt.Sprint(room.Width) + "\n" +
+		"\t\tДлинна: " + fmt.Sprint(room.Length) + "\n" +
+		"\t\tВысота: " + fmt.Sprint(room.Height) + "\n" +
+		"\t\tКоличество окон: " + fmt.Sprint(room.WindowsCount) + "\n"
+	//"\t\t------------------------\n"
 	return resString
 }

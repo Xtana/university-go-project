@@ -1,12 +1,14 @@
 package Rooms
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Rooms struct {
 	Rooms []Room
 }
 
-func (rooms Rooms) CountWindows() int {
+func (rooms Rooms) countWindows() int {
 	windowsSum := 0
 	for _, room := range rooms.Rooms {
 		windowsSum += room.WindowsCount
@@ -14,7 +16,7 @@ func (rooms Rooms) CountWindows() int {
 	return windowsSum
 }
 
-func (rooms Rooms) CountSquare() float32 {
+func (rooms Rooms) countSquare() float32 {
 	var resSquare float32 = 0
 	for _, room := range rooms.Rooms {
 		resSquare += room.countSquare()
@@ -22,7 +24,7 @@ func (rooms Rooms) CountSquare() float32 {
 	return resSquare
 }
 
-func (rooms Rooms) CountVolume() float32 {
+func (rooms Rooms) countVolume() float32 {
 	var resVolume float32 = 0
 	for _, room := range rooms.Rooms {
 		resVolume += room.countVolume()
@@ -32,17 +34,19 @@ func (rooms Rooms) CountVolume() float32 {
 
 func (rooms Rooms) RoomsInfo() string {
 	resString := ""
-	for _, room := range rooms.Rooms {
-		resString += room.RoomInfo()
+	for i, room := range rooms.Rooms {
+		resString += room.getRoomString() + room.Device.DevicesInfo()
+		if (i + 1) != len(rooms.Rooms) {
+			resString += "\t\t------------------------\n"
+		}
 	}
 	return resString
 }
 
-func (home Rooms) HomeInfo() string {
+func (home Rooms) GeneralRoomParameters() string {
 	resString := ""
-	resString += "Площадь: " + fmt.Sprint(home.CountSquare()) + " м^2\n" +
-		"Объем: " + fmt.Sprint(home.CountVolume()) + " м^3\n" +
-		"Количество окон: " + fmt.Sprint(home.CountWindows())
-
+	resString += "\tПлощадь: " + fmt.Sprint(home.countSquare()) + " м^2\n" +
+		"\tОбъем: " + fmt.Sprint(home.countVolume()) + " м^3\n" +
+		"\tКоличество окон: " + fmt.Sprint(home.countWindows())
 	return resString
 }
