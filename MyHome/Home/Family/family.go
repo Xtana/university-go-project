@@ -1,7 +1,7 @@
 package Family
 
 import (
-	"strconv"
+	"fmt"
 )
 
 type Family struct {
@@ -13,7 +13,7 @@ func (family Family) FamilyInfo() string {
 	for _, member := range family.FamilyMembers {
 		resString += "\tИмя: " + member.Name +
 			"; Пол: " + member.Sex +
-			"; Возраст: " + strconv.Itoa(member.Age) +
+			"; Возраст: " + fmt.Sprint(member.Age) +
 			"; Адрес проживания: " + member.RealAddress +
 			"; Адрес прописки: " + member.ResidentialAddress +
 			"\n"
