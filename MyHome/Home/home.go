@@ -27,24 +27,24 @@ func Make() Home {
 		Name:               "Роман",
 		Age:                20,
 		Sex:                "М",
-		RealAddress:        "Пр. Победы 18, 74",
-		ResidentialAddress: "Залупкино 67, 87",
+		RealAddress:        "Пр. Победы 00, 00",
+		ResidentialAddress: "Залупкино 2, 28",
 	}
 
 	mam := Family.FamilyMember{
 		Name:               "Вероника",
 		Age:                39,
 		Sex:                "Ж",
-		RealAddress:        "Пр. Победы 18, 74",
-		ResidentialAddress: "Пр. Победы 18, 74",
+		RealAddress:        "Пр. Победы 00, 00",
+		ResidentialAddress: "Пр. Победы 00, 00",
 	}
 
 	dad := Family.FamilyMember{
 		Name:               "Андрей",
 		Age:                43,
 		Sex:                "М",
-		RealAddress:        "Пр. Победы 18, 74",
-		ResidentialAddress: "Революционная, 52",
+		RealAddress:        "Пр. Победы 00, 00",
+		ResidentialAddress: "Революционная, 00",
 	}
 
 	livingRoomDevices := Device.Devices{
