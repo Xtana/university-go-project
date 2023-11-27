@@ -34,8 +34,11 @@ func (rooms Rooms) countVolume() float32 {
 
 func (rooms Rooms) RoomsInfo() string {
 	resString := ""
+	if len(rooms.Rooms) > 0 {
+		resString += "\tКомнаты:\n"
+	}
 	for i, room := range rooms.Rooms {
-		resString += room.getRoomString() + room.Device.DevicesInfo()
+		resString += room.getRoomString() + room.Furnitures.FurnitureInfo() + room.Devices.DevicesInfo()
 		if (i + 1) != len(rooms.Rooms) {
 			resString += "\t\t------------------------\n"
 		}
