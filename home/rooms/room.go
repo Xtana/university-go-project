@@ -1,9 +1,9 @@
-package Rooms
+package rooms
 
 import (
 	"fmt"
-	"university-go-project/Home/Rooms/Device"
-	"university-go-project/Home/Rooms/Furniture"
+	"university-go-project/home/rooms/device"
+	"university-go-project/home/rooms/furniture"
 )
 
 type Room struct {
@@ -12,8 +12,8 @@ type Room struct {
 	Length       float32
 	Height       float32
 	WindowsCount int
-	Devices      Device.Devices
-	Furnitures   Furniture.Furnitures
+	Devices      device.Devices
+	Furnitures   furniture.Furnitures
 }
 
 func (room Room) countSquare() float32 {

@@ -1,4 +1,4 @@
-package Things
+package things
 
 type Things struct {
 	ThingArr []Thing

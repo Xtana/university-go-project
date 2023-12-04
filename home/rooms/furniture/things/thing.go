@@ -1,4 +1,4 @@
-package Things
+package things
 
 type Thing struct {
 	Type string

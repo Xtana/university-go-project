@@ -1,8 +1,8 @@
-package Furniture
+package furniture
 
 import (
 	"fmt"
-	"university-go-project/Home/Rooms/Furniture/Things"
+	"university-go-project/home/rooms/furniture/things"
 )
 
 type Furniture struct {
@@ -10,7 +10,7 @@ type Furniture struct {
 	Length float32
 	Width  float32
 	Color  string
-	Things Things.Things
+	Things things.Things
 }
 
 func (furniture Furniture) getFurnitureString() string {

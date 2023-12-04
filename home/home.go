@@ -1,17 +1,17 @@
-package Home
+package home
 
 import (
 	"fmt"
-	"university-go-project/Home/Family"
-	"university-go-project/Home/Rooms"
-	"university-go-project/Home/Rooms/Device"
-	"university-go-project/Home/Rooms/Furniture"
-	"university-go-project/Home/Rooms/Furniture/Things"
+	"university-go-project/home/family"
+	"university-go-project/home/rooms"
+	"university-go-project/home/rooms/device"
+	"university-go-project/home/rooms/furniture"
+	"university-go-project/home/rooms/furniture/things"
 )
 
 type Home struct {
-	Family        Family.Family
-	Rooms         Rooms.Rooms
+	Family        family.Family
+	Rooms         rooms.Rooms
 	FamilySurname string
 }
 
@@ -23,15 +23,15 @@ func (home Home) HomeInfo() {
 }
 
 func Make() Home {
-	i := Family.FamilyMember{
+	i := family.FamilyMember{
 		Name:               "Роман",
 		Age:                20,
 		Sex:                "М",
 		RealAddress:        "Пр. Победы 00, 00",
-		ResidentialAddress: "Залупкино 2, 28",
+		ResidentialAddress: "Крпемль 00, 28",
 	}
 
-	mam := Family.FamilyMember{
+	mam := family.FamilyMember{
 		Name:               "Вероника",
 		Age:                39,
 		Sex:                "Ж",
@@ -39,7 +39,7 @@ func Make() Home {
 		ResidentialAddress: "Пр. Победы 00, 00",
 	}
 
-	dad := Family.FamilyMember{
+	dad := family.FamilyMember{
 		Name:               "Андрей",
 		Age:                43,
 		Sex:                "М",
@@ -47,8 +47,8 @@ func Make() Home {
 		ResidentialAddress: "Революционная, 00",
 	}
 
-	livingRoomDevices := Device.Devices{
-		[]Device.Device{
+	livingRoomDevices := device.Devices{
+		[]device.Device{
 			{
 				Type:    "Плазменный телевизор",
 				Name:    "UP77 55'' 4K Smart UHD",
@@ -91,8 +91,8 @@ func Make() Home {
 		},
 	}
 
-	bathroomDevices := Device.Devices{
-		[]Device.Device{
+	bathroomDevices := device.Devices{
+		[]device.Device{
 			{
 				Type:    "Стиральная машина",
 				Name:    "F2J6NNFW",
@@ -104,8 +104,8 @@ func Make() Home {
 			},
 		},
 	}
-	kitchenDevices := Device.Devices{
-		[]Device.Device{
+	kitchenDevices := device.Devices{
+		[]device.Device{
 			{
 				Type:    "Телевизор",
 				Name:    "UE28H4000AKXRU",
@@ -136,8 +136,8 @@ func Make() Home {
 		},
 	}
 
-	hallwayDevices := Device.Devices{
-		[]Device.Device{
+	hallwayDevices := device.Devices{
+		[]device.Device{
 			{
 				Type:    "Робот-пылесос",
 				Name:    "Legee-7",
@@ -150,8 +150,8 @@ func Make() Home {
 		},
 	}
 
-	livingRoomFurneturesThingsTable := Things.Things{
-		[]Things.Thing{
+	livingRoomFurnitureThingsTable := things.Things{
+		[]things.Thing{
 			{
 				Type: "Фото",
 			},
@@ -164,8 +164,8 @@ func Make() Home {
 		},
 	}
 
-	livingRoomFurneturesThingsSofa := Things.Things{
-		[]Things.Thing{
+	livingRoomFurnitureThingsSofa := things.Things{
+		[]things.Thing{
 			{
 				Type: "Падушка",
 			},
@@ -178,8 +178,8 @@ func Make() Home {
 		},
 	}
 
-	livingRoomFurneturesThingsShelves := Things.Things{
-		[]Things.Thing{
+	livingRoomFurnitureThingsShelves := things.Things{
+		[]things.Thing{
 			{
 				Type: "Иконы",
 			},
@@ -195,14 +195,14 @@ func Make() Home {
 		},
 	}
 
-	livingRoomFurnetures := Furniture.Furnitures{
-		[]Furniture.Furniture{
+	livingRoomFurniture := furniture.Furnitures{
+		[]furniture.Furniture{
 			{
 				Type:   "Письменный стол",
 				Length: 250,
 				Width:  130,
 				Color:  "Brown",
-				Things: livingRoomFurneturesThingsTable,
+				Things: livingRoomFurnitureThingsTable,
 			},
 			{
 				Type:   "Кресло",
@@ -221,20 +221,20 @@ func Make() Home {
 				Length: 250,
 				Width:  200,
 				Color:  "White",
-				Things: livingRoomFurneturesThingsSofa,
+				Things: livingRoomFurnitureThingsSofa,
 			},
 			{
 				Type:   "Полки",
 				Length: 60,
 				Width:  60,
 				Color:  "Brown",
-				Things: livingRoomFurneturesThingsShelves,
+				Things: livingRoomFurnitureThingsShelves,
 			},
 		},
 	}
 
-	livingRoomFurneturesThingsKitchenArea := Things.Things{
-		[]Things.Thing{
+	livingRoomFurnitureThingsKitchenArea := things.Things{
+		[]things.Thing{
 			{
 				Type: "Доска",
 			},
@@ -250,8 +250,8 @@ func Make() Home {
 		},
 	}
 
-	kitchenRoomFurnetures := Furniture.Furnitures{
-		[]Furniture.Furniture{
+	kitchenRoomFurniture := furniture.Furnitures{
+		[]furniture.Furniture{
 			{
 				Type:   "Обеденный стол",
 				Length: 300,
@@ -275,13 +275,13 @@ func Make() Home {
 				Length: 250,
 				Width:  200,
 				Color:  "Beige",
-				Things: livingRoomFurneturesThingsKitchenArea,
+				Things: livingRoomFurnitureThingsKitchenArea,
 			},
 		},
 	}
 
-	hallwayFurneturesThingsСloset1 := Things.Things{
-		[]Things.Thing{
+	hallwayFurnitureBigCloset := things.Things{
+		[]things.Thing{
 			{
 				Type: "Одежда",
 			},
@@ -291,54 +291,54 @@ func Make() Home {
 		},
 	}
 
-	hallwayFurneturesThingsСloset2 := Things.Things{
-		[]Things.Thing{
+	hallwayFurnitureSmallCloset := things.Things{
+		[]things.Thing{
 			{
-				Type: "Всякая хуйня",
+				Type: "Всякое",
 			},
 		},
 	}
 
-	hallwayRoomFurnetures := Furniture.Furnitures{
-		[]Furniture.Furniture{
+	hallwayRoomFurniture := furniture.Furnitures{
+		[]furniture.Furniture{
 			{
 				Type:   "Шкаф",
 				Length: 200,
 				Width:  70,
 				Color:  "Black-brown",
-				Things: hallwayFurneturesThingsСloset1,
+				Things: hallwayFurnitureBigCloset,
 			},
 			{
 				Type:   "Шкафчик",
 				Length: 80,
 				Width:  70,
 				Color:  "Black-brown",
-				Things: hallwayFurneturesThingsСloset2,
+				Things: hallwayFurnitureSmallCloset,
 			},
 		},
 	}
 
-	livingRoom := Rooms.Room{
+	livingRoom := rooms.Room{
 		Name:         "Гостинная",
 		Width:        3.5,
 		Length:       5.5,
 		Height:       2.5,
 		WindowsCount: 1,
 		Devices:      livingRoomDevices,
-		Furnitures:   livingRoomFurnetures,
+		Furnitures:   livingRoomFurniture,
 	}
 
-	kitchen := Rooms.Room{
+	kitchen := rooms.Room{
 		Name:         "Кухня",
 		Width:        2.3,
 		Length:       2.5,
 		Height:       2.5,
 		WindowsCount: 1,
 		Devices:      kitchenDevices,
-		Furnitures:   kitchenRoomFurnetures,
+		Furnitures:   kitchenRoomFurniture,
 	}
 
-	bathroom := Rooms.Room{
+	bathroom := rooms.Room{
 		Name:         "Ванная комната",
 		Width:        2.2,
 		Length:       2,
@@ -347,20 +347,20 @@ func Make() Home {
 		Devices:      bathroomDevices,
 	}
 
-	hallway := Rooms.Room{
+	hallway := rooms.Room{
 		Name:         "Коридор",
 		Width:        3.5,
 		Length:       1,
 		Height:       2.5,
 		WindowsCount: 0,
 		Devices:      hallwayDevices,
-		Furnitures:   hallwayRoomFurnetures,
+		Furnitures:   hallwayRoomFurniture,
 	}
 
 	home := Home{
 		FamilySurname: "Самохиных",
-		Family:        Family.Family{FamilyMemberArr: []Family.FamilyMember{i, mam, dad}},
-		Rooms:         Rooms.Rooms{Rooms: []Rooms.Room{livingRoom, kitchen, bathroom, hallway}},
+		Family:        family.Family{FamilyMemberArr: []family.FamilyMember{i, mam, dad}},
+		Rooms:         rooms.Rooms{Rooms: []rooms.Room{livingRoom, kitchen, bathroom, hallway}},
 	}
 
 	return home
