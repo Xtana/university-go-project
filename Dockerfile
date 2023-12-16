@@ -5,6 +5,7 @@ ENV GOPATH=/
 
 COPY ./ ./
 
-RUN go build -0 struct home/main.go
+RUN go mod download
+RUN go build -0 struct ./main.go
 
 CMD ["./struct"]
