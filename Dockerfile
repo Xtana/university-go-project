@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM golang:1.21-alpine
 
 RUN go version
 ENV GOPATH=/
@@ -6,6 +6,6 @@ ENV GOPATH=/
 COPY ./ ./
 
 RUN go mod download
-RUN go build -0 struct ./main.go
+RUN go build -o university-go-project ./main.go
 
-CMD ["./struct"]
+CMD ["./university-go-project"]

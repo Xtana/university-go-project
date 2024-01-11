@@ -1,7 +1,7 @@
 test:
-	@echo 'вроде работаю'
+	@echo 'Makefile is work'
 
 run:
-	sudo docker-compose up --build struct
+	docker-compose up --build project
 stop:
-	sudo docker-compose stop
+	docker-compose stop
